@@ -1,0 +1,27 @@
+.section {
+    padding: 100px 0;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.title {
+    font-size: 48px;
+    margin-bottom: 60px;
+    font-weight: 600;
+}
+
+.label {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f5f5f7;
+}
+
+.value {
+    font-size: 18px;
+    color: #86868b;
+    font-weight: 400;
+}
+
+.row {
+    padding: 10px 0;
+}
