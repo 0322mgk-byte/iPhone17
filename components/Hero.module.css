@@ -24,6 +24,7 @@
     font-weight: 500;
     margin-bottom: 2rem;
     display: block;
+    text-wrap: balance;
 }
 
 .inner {
@@ -136,5 +137,17 @@
 
     .subtitle {
         font-size: 20px;
+    }
+
+    .auroraSubtitle {
+        font-size: 20px;
+        text-wrap: balance;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        line-height: 1.4;
+    }
+
+    .imageWrapper {
+        margin-top: 20px;
     }
 }

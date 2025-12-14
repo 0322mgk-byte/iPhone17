@@ -31,7 +31,7 @@ export default function CartPage() {
                         </div>
                     </BlurFade>
                 ) : (
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 350px', gap: '30px' }}>
+                    <div className={css.contentGrid}>
                         {/* Cart Items List */}
                         <div className={css.cartList}>
                             <Stack>
@@ -39,7 +39,7 @@ export default function CartPage() {
                                     <BlurFade key={item.id} delay={0.1 * (index + 1)}>
                                         <div className={css.item}>
                                             <div style={{ display: 'flex', gap: '20px' }}>
-                                                <Box className={css.itemImage} style={{ width: 100, height: 100, position: 'relative', overflow: 'hidden' }}>
+                                                <Box className={css.itemImage} style={{ minWidth: 100, width: 100, height: 100, position: 'relative', overflow: 'hidden', flexShrink: 0 }}>
                                                     <NextImage
                                                         src={item.color.image}
                                                         alt={item.model}
@@ -47,22 +47,23 @@ export default function CartPage() {
                                                         style={{ objectFit: 'contain', padding: '10px' }}
                                                     />
                                                 </Box>
-                                                <div style={{ flex: 1 }}>
-                                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                                                <div style={{ flex: 1, minWidth: 0 }}>
+                                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '10px' }}>
                                                         <div>
-                                                            <Text className={css.itemName}>{item.model}</Text>
+                                                            <Text className={css.itemName} style={{ lineHeight: 1.2 }}>{item.model}</Text>
                                                             <Text className={css.itemDetail}>{item.color.name}</Text>
                                                             <Text className={css.itemDetail}>{item.storage}</Text>
                                                         </div>
-                                                        <Text className={css.itemPrice}>${item.price.toLocaleString()}</Text>
+                                                        <Text className={css.itemPrice} style={{ whiteSpace: 'nowrap' }}>${item.price.toLocaleString()}</Text>
                                                     </div>
-                                                    <Group justify="flex-end" mt="md">
+                                                    <Group justify="flex-end" mt="xs">
                                                         <Button
                                                             variant="subtle"
                                                             color="red"
                                                             size="xs"
                                                             leftSection={<IconTrash size={14} />}
                                                             onClick={() => removeFromCart(item.id)}
+                                                            className={css.removeButton}
                                                         >
                                                             Remove
                                                         </Button>
@@ -77,6 +78,7 @@ export default function CartPage() {
 
                         {/* Summary */}
                         <div>
+
                             <BlurFade delay={0.3}>
                                 <div className={css.summary}>
                                     <div className={css.summaryRow}>
@@ -105,8 +107,9 @@ export default function CartPage() {
                             </BlurFade>
                         </div>
                     </div>
-                )}
-            </Container>
-        </div>
+                )
+                }
+            </Container >
+        </div >
     );
 }

@@ -36,12 +36,12 @@ export function Header() {
         >
             <Container size="xl" className={css.inner} style={{ position: 'relative' }}>
                 {/* Left: Title */}
-                <Text fw={600} size="sm" c="white" style={{ cursor: 'default' }}>
+                <Text fw={600} size="sm" c="white" style={{ cursor: 'default' }} className={css.logoText}>
                     iPhone 17 Pro
                 </Text>
 
                 {/* Center: Links */}
-                <Group gap={5} visibleFrom="xs" className={css.centeredGroup}>
+                <Group gap={5} className={css.centeredGroup}>
                     {items}
                 </Group>
 
@@ -74,8 +74,6 @@ export function Header() {
                         </Box>
                     </Link>
                 </Group>
-
-                <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
             </Container>
         </Box>
     );

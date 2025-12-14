@@ -7,12 +7,14 @@
 .title {
     font-size: 56px;
     font-weight: 700;
+    text-wrap: balance;
 }
 
 .price {
     font-size: 24px;
     font-weight: 400;
     color: #1d1d1f;
+    text-wrap: balance;
 }
 
 .buyButton {
@@ -33,5 +35,23 @@
 
     &:hover {
         background-color: rgba(0, 113, 227, 0.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 80px 0;
+    }
+
+    .title {
+        font-size: 40px;
+        text-wrap: balance;
+    }
+
+    .price {
+        font-size: 19px;
+        text-wrap: balance;
+        padding: 0 20px;
+        text-align: center;
     }
 }

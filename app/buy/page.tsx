@@ -102,8 +102,13 @@ export default function BuyPage() {
                                 fullWidth
                                 color="blue"
                                 onClick={() => {
+                                    // Fallback for environments where crypto.randomUUID is not available (e.g. mobile http)
+                                    const uniqueId = typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
+                                        ? crypto.randomUUID()
+                                        : `item-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+
                                     addToCart({
-                                        id: crypto.randomUUID(),
+                                        id: uniqueId,
                                         model: 'iPhone 17 Pro',
                                         color: selectedColor,
                                         storage: selectedStorage.size,

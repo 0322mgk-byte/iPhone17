@@ -100,3 +100,42 @@
 .checkoutButton:hover {
     background-color: #0077ed;
 }
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+}
+
+@media (max-width: 900px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .cartList,
+    .summary {
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+
+    .itemName {
+        font-size: 20px;
+        margin-bottom: 2px;
+    }
+
+    .itemPrice {
+        font-size: 17px;
+    }
+
+    /* Ensure flex items stack or wrap if too narrow */
+    .cartItemContent {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

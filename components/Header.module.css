@@ -39,3 +39,14 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+@media (max-width: 768px) {
+  .logoText {
+    font-size: 10px !important;
+  }
+
+  .link {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+}
